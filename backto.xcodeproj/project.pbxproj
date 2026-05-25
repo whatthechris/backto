@@ -6,19 +6,90 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		428FEF7D2FBE3C59005E6663 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428FEF7C2FBE3C59005E6663 /* WidgetKit.framework */; };
+		428FEF7F2FBE3C59005E6663 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428FEF7E2FBE3C59005E6663 /* SwiftUI.framework */; };
+		428FEF8C2FBE3C5A005E6663 /* backtoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 428FEF7A2FBE3C59005E6663 /* backtoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		428FEF8A2FBE3C5A005E6663 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42CFB8B32FBE029A0024BE9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 428FEF792FBE3C59005E6663;
+			remoteInfo = backtoWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		428FEF912FBE3C5A005E6663 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				428FEF8C2FBE3C5A005E6663 /* backtoWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		428FEF7A2FBE3C59005E6663 /* backtoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = backtoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		428FEF7C2FBE3C59005E6663 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		428FEF7E2FBE3C59005E6663 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		428FEF972FBE3EA3005E6663 /* backtoWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = backtoWidgetExtension.entitlements; sourceTree = "<group>"; };
 		42CFB8BB2FBE029A0024BE9D /* backto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = backto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		428FEF8D2FBE3C5A005E6663 /* Exceptions for "backtoWidget" folder in "backtoWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 428FEF792FBE3C59005E6663 /* backtoWidgetExtension */;
+		};
+		428FEF992FBE3EDA005E6663 /* Exceptions for "backto" folder in "backto" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 42CFB8BA2FBE029A0024BE9D /* backto */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		428FEF802FBE3C59005E6663 /* backtoWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				428FEF8D2FBE3C5A005E6663 /* Exceptions for "backtoWidget" folder in "backtoWidgetExtension" target */,
+			);
+			path = backtoWidget;
+			sourceTree = "<group>";
+		};
 		42CFB8BD2FBE029A0024BE9D /* backto */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				428FEF992FBE3EDA005E6663 /* Exceptions for "backto" folder in "backto" target */,
+			);
 			path = backto;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		428FEF772FBE3C59005E6663 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				428FEF7F2FBE3C59005E6663 /* SwiftUI.framework in Frameworks */,
+				428FEF7D2FBE3C59005E6663 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42CFB8B82FBE029A0024BE9D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -29,10 +100,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		428FEF7B2FBE3C59005E6663 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				428FEF7C2FBE3C59005E6663 /* WidgetKit.framework */,
+				428FEF7E2FBE3C59005E6663 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		42CFB8B22FBE029A0024BE9D = {
 			isa = PBXGroup;
 			children = (
+				428FEF972FBE3EA3005E6663 /* backtoWidgetExtension.entitlements */,
 				42CFB8BD2FBE029A0024BE9D /* backto */,
+				428FEF802FBE3C59005E6663 /* backtoWidget */,
+				428FEF7B2FBE3C59005E6663 /* Frameworks */,
 				42CFB8BC2FBE029A0024BE9D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				42CFB8BB2FBE029A0024BE9D /* backto.app */,
+				428FEF7A2FBE3C59005E6663 /* backtoWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +132,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		428FEF792FBE3C59005E6663 /* backtoWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 428FEF8E2FBE3C5A005E6663 /* Build configuration list for PBXNativeTarget "backtoWidgetExtension" */;
+			buildPhases = (
+				428FEF762FBE3C59005E6663 /* Sources */,
+				428FEF772FBE3C59005E6663 /* Frameworks */,
+				428FEF782FBE3C59005E6663 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				428FEF802FBE3C59005E6663 /* backtoWidget */,
+			);
+			name = backtoWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = backtoWidgetExtension;
+			productReference = 428FEF7A2FBE3C59005E6663 /* backtoWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		42CFB8BA2FBE029A0024BE9D /* backto */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42CFB8C62FBE029B0024BE9D /* Build configuration list for PBXNativeTarget "backto" */;
@@ -55,10 +161,12 @@
 				42CFB8B72FBE029A0024BE9D /* Sources */,
 				42CFB8B82FBE029A0024BE9D /* Frameworks */,
 				42CFB8B92FBE029A0024BE9D /* Resources */,
+				428FEF912FBE3C5A005E6663 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				428FEF8B2FBE3C5A005E6663 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				42CFB8BD2FBE029A0024BE9D /* backto */,
@@ -80,6 +188,9 @@
 				LastSwiftUpdateCheck = 2650;
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
+					428FEF792FBE3C59005E6663 = {
+						CreatedOnToolsVersion = 26.5;
+					};
 					42CFB8BA2FBE029A0024BE9D = {
 						CreatedOnToolsVersion = 26.5;
 					};
@@ -100,11 +211,19 @@
 			projectRoot = "";
 			targets = (
 				42CFB8BA2FBE029A0024BE9D /* backto */,
+				428FEF792FBE3C59005E6663 /* backtoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		428FEF782FBE3C59005E6663 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42CFB8B92FBE029A0024BE9D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +234,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		428FEF762FBE3C59005E6663 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42CFB8B72FBE029A0024BE9D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +250,79 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		428FEF8B2FBE3C5A005E6663 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 428FEF792FBE3C59005E6663 /* backtoWidgetExtension */;
+			targetProxy = 428FEF8A2FBE3C5A005E6663 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		428FEF8F2FBE3C5A005E6663 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = backtoWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TM7GQQLBEH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = backtoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = backtoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cwdigital.backto.backtoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		428FEF902FBE3C5A005E6663 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = backtoWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TM7GQQLBEH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = backtoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = backtoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cwdigital.backto.backtoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		42CFB8C42FBE029B0024BE9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -249,15 +447,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = backto/backto.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TM7GQQLBEH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = backto/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BackTo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "backto uses your location to find places within 50 metres.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -280,15 +485,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = backto/backto.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TM7GQQLBEH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = backto/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BackTo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "backto uses your location to find places within 50 metres.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +521,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		428FEF8E2FBE3C5A005E6663 /* Build configuration list for PBXNativeTarget "backtoWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				428FEF8F2FBE3C5A005E6663 /* Debug */,
+				428FEF902FBE3C5A005E6663 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		42CFB8B62FBE029A0024BE9D /* Build configuration list for PBXProject "backto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

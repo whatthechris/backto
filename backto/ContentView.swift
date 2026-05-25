@@ -1,24 +1,37 @@
-//
-//  ContentView.swift
-//  backto
-//
-//  Created by Chris Wong on 2026-05-20.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+    @State private var selectedTab = 0
+    @State private var isLaunching = true
 
-#Preview {
-    ContentView()
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            Tab("Nearby", systemImage: "location.fill", value: 0) {
+                NearbyPlacesView()
+            }
+            Tab("Saved", systemImage: "bookmark.fill", value: 1) {
+                SavedPlacesView()
+            }
+        }
+        .onOpenURL { url in
+            guard url.scheme == "backto" else { return }
+            switch url.host {
+            case "nearby": selectedTab = 0
+            case "saved":  selectedTab = 1
+            default: break
+            }
+        }
+        .overlay {
+            if isLaunching {
+                LaunchScreenView()
+                    .transition(.opacity)
+            }
+        }
+        .task {
+            try? await Task.sleep(for: .seconds(1.8))
+            withAnimation(.easeOut(duration: 0.4)) {
+                isLaunching = false
+            }
+        }
+    }
 }
