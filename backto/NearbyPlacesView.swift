@@ -380,6 +380,7 @@ private struct ArchCarousel: View {
                         PlaceArchCard(
                             place: place,
                             isSaved: savedIDs.contains(place.id),
+                            isCenter: index == scrollID,
                             onSave: { onSave(place) },
                             onUnsave: { onUnsave(place) }
                         )
@@ -412,8 +413,13 @@ private struct ArchCarousel: View {
 private struct PlaceArchCard: View {
     let place: NearbyPlace
     let isSaved: Bool
+    let isCenter: Bool
     let onSave: () -> Void
     let onUnsave: () -> Void
+
+    @State private var pullOffset: CGFloat = 0
+    @State private var didTrigger = false
+    private let threshold: CGFloat = 60
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -463,6 +469,39 @@ private struct PlaceArchCard: View {
         .background(.regularMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 18))
         .shadow(color: .black.opacity(0.12), radius: 16, x: 0, y: 6)
+        .overlay(alignment: .top) {
+            if pullOffset > 0 {
+                let progress = min(pullOffset / threshold, 1)
+                Image(systemName: didTrigger || isSaved ? "bookmark.fill" : "bookmark")
+                    .font(.callout.bold())
+                    .foregroundStyle(.white)
+                    .padding(10)
+                    .background(Color.accentColor.opacity(progress), in: Circle())
+                    .scaleEffect(0.6 + 0.4 * progress)
+                    .offset(y: -18)
+                    .animation(.easeOut(duration: 0.1), value: didTrigger)
+            }
+        }
+        .offset(y: pullOffset * 0.25)
+        .animation(.interactiveSpring(response: 0.3, dampingFraction: 0.7), value: pullOffset)
+        .gesture(
+            DragGesture(minimumDistance: 10)
+                .onChanged { value in
+                    guard isCenter, !isSaved, value.translation.height > 0 else { return }
+                    pullOffset = min(value.translation.height, threshold * 1.5)
+                    if !didTrigger && pullOffset >= threshold {
+                        didTrigger = true
+                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                        onSave()
+                    }
+                }
+                .onEnded { _ in
+                    withAnimation(.spring(response: 0.35, dampingFraction: 0.7)) {
+                        pullOffset = 0
+                    }
+                    didTrigger = false
+                }
+        )
     }
 }
 
